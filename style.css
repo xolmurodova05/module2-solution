@@ -1,0 +1,87 @@
+/* 1. Umumiy reset va box-sizing */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. Body va H1 */
+body {
+  font-family: Arial, sans-serif;
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+}
+h1 {
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+/* 3. Container: max-width bilan markazlash */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* 4. Section (box) uslubi */
+.box {
+  position: relative;
+  background: #ccc;
+  border: 1px solid #000;
+  padding: 30px 15px 15px;
+  margin-bottom: 20px;
+}
+
+/* 5. Section sarlavha */
+.title {
+  position: absolute;
+  top: -1px;       /* border ustida biroz oshirib qo'yamiz */
+  right: -1px;
+  padding: 5px 15px;
+  border: 1px solid #000;
+  font-weight: bold;
+  font-size: 1.25em;
+  color: #fff;
+}
+
+/* Ranglar */
+.chicken { background: #e9967a; }
+.beef    { background: #cd5c5c; }
+.sushi   { background: #f4e04d; color: #000; }
+
+/* 6. Desktop (>=992px): 3 ustun */
+@media (min-width: 992px) {
+  .box {
+    float: left;
+    width: calc(33.333% - 13px); /* marginlar hisobiga */
+    margin-right: 10px;
+  }
+  .box:nth-child(3) {
+    margin-right: 0;
+  }
+}
+
+/* 7. Tablet (768px–991px): 2+1 */
+@media (min-width: 768px) and (max-width: 991px) {
+  .box {
+    float: left;
+    width: calc(50% - 13px);
+    margin-right: 10px;
+  }
+  .box:nth-child(2n) {
+    margin-right: 0;
+  }
+  .box:nth-child(3) {
+    clear: both;
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+/* 8. Mobile (<=767px): 1 ustun */
+@media (max-width: 767px) {
+  .box {
+    width: 100%;
+    float: none;
+  }
+}
